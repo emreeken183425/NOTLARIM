@@ -8,3 +8,7 @@
 //* Bir state'e baslangıc degeri constructor metodu icersinde this.state ile atanabilir
 //* constructor'in disinda state, setState() metodu ile degistilebilir.
 //* 
+
+ ******useState*****
+//* useState en cok kullanilan Hook'tur.
+  //* Bir state'in degisken, dizi ve obje ile kullanilabilmesine olanak saglar
