@@ -12,3 +12,37 @@
  ******useState*****
 //* useState en cok kullanilan Hook'tur.
   //* Bir state'in degisken, dizi ve obje ile kullanilabilmesine olanak saglar
+
+******CLASS COMPONENTS'DE STATE*******
+```
+import React from "react";
+
+class ClassComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Clas Component</h1>
+      </div>
+    );
+  }
+}
+
+export default ClassComponent;
+
+
+```
+```
+import React from "react";
+
+const Functionstate = () => {
+  return (
+    <div>
+      <h1>function Component</h1>
+    </div>
+  );
+};
+
+export default Functionstate;
+
+```
+
