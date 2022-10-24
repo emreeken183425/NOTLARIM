@@ -18,10 +18,29 @@
 import React from "react";
 
 class ClassComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0
+    };
+  }
+
+  increase = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
+  descrise = () => {
+    this.setState({ counter: this.state.counter - 1 });
+  };
+
   render() {
+    console.log("class Components  ", this.state.counter.counter);
+
     return (
       <div>
         <h1>Clas Component</h1>
+        <p>Counter:{this.state.counter} </p>
+        <button onClick={() => this.increase()}>İNC</button>
+        <button onClick={() => this.descrise()}>DESC</button>
       </div>
     );
   }
@@ -32,12 +51,21 @@ export default ClassComponent;
 
 ```
 ```
-import React from "react";
-
 const Functionstate = () => {
+  const [counter, setCounter] = useState(0);
+  //  useState burada 2 değer alır counter değer setCounter ise fonksiyon
+  const increase = () => {
+    setCounter(counter + 1);
+  };
+  const descrise = () => {
+    setCounter(counter - 1);
+  };
   return (
     <div>
       <h1>function Component</h1>
+      <p>counter:{counter} </p>
+      <button onClick={() => increase()}>INC</button>
+      <button onClick={() => descrise()}>DESC</button>
     </div>
   );
 };
