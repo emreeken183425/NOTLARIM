@@ -8,7 +8,18 @@
 //* Bir state'e baslangıc degeri constructor metodu icersinde this.state ile atanabilir
 //* constructor'in disinda state, setState() metodu ile degistilebilir.
 //* 
+ //? https://reactjs.org/docs/hooks-reference.html#usestate
+  //! State degiskeninin degeri, 1.render ile initialState
+  //! parametresinin ilk degerini alir. Dolayisiyle bu durumda
+  //! prop'tan gelen ilk deger state'e aktarilir.
+  //! Sonradan degisen props degerleri useState'e aktarilmaz.
+  //! Eger props'tan gelen degerleri her degisimde useState'e
+  //! aktarmak istersek useEffect hook'unu componentDidUpdate
+  //! gibi kullanabiriz.
 
+  //? componentDidUpdate
+  //? newTitle veya description her degistiginde local title ve
+  //? desc state'lerimizi gunceliyoruz.
  ******useState*****
 //* useState en cok kullanilan Hook'tur.
   //* Bir state'in degisken, dizi ve obje ile kullanilabilmesine olanak saglar
