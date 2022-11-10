@@ -1,3 +1,16 @@
+
+import User from "./User";
+import Navbar from "./Navbar";
+export default function App() { 
+  return (
+    <div className="App">
+      <Navbar title="User app 3" />
+      <User name="emre" departman="Bilişim" />
+    </div>
+  );
+}
+
+
 import { Component } from "react";
 import PropTypes from "prop-types";
 class User extends Component {

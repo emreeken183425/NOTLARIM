@@ -1,3 +1,6 @@
+
+<!-- https://www.youtube.com/watch?v=14M8Z-ui7jc&list=PLIHume2cwmHeydP0GkOzSxJHT1ph1BrWj&index=11 -->
+
 FUNCTİONAL COMPONENTSTE PROPS
 Props kullanımı nasıl olur*
 örneğin biz User bilgilerini navbara göndereceksek props kullanırız bunun için şöyle yaparız:
