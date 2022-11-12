@@ -85,3 +85,27 @@ export default Functionstate;
 
 ```
 
+import React, { useState } from "react";
+
+const UseStateHook = () => {
+  const [count, setCount] = useState(4);
+  function increase() {
+    setCount(count + 1);
+  }
+  function decrease() {
+    setCount(count - 1);
+  }
+  return (
+    <div>
+      <button onClick={decrease} className="btn-btn-primary">
+        -
+      </button>
+      <span>{count} </span>
+      <button onClick={increase} className="btn-btn-warning">
+        +
+      </button>
+    </div>
+  );
+};
+
+export default UseStateHook;
