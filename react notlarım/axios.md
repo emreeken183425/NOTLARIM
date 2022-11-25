@@ -73,3 +73,61 @@ const [loading, setLoading] = useState(true)
 
 export default Axios
 ```
+
+```
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
+function Axios() {
+    const [users, setUsers] = useState([])
+const [loading, setLoading] = useState(true)
+const [post, setPost] = useState([])
+    useEffect(() => {
+    //   axios('https://jsonplaceholder.typicode.com/users')
+    //   .then(res=>setUsers(res.data))
+    //    .catch((err)=>{console.log("error",err)})
+
+
+    //   axios('https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}')
+    //   .then(res=>setPost(res.data ))
+    //   .finally(()=>setLoading(false))
+    getdata();
+    }, [])
+    
+    const getdata=async()=>{
+        try {
+            const{data:users}=await axios('https://jsonplaceholder.typicode.com/users');
+        const{data:post}=await axios('https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}'  )
+
+        }catch (error) {
+            console.log(error);
+        }
+    }
+  return (
+    <div>
+<h1>axios ile veri çekme </h1>
+
+{loading && <div>yükleniyor...</div> }
+{
+    users.map(user=>(
+        <ul key={user.id} >
+            <li>{user.name} </li>
+            <li>{user.address.street} </li>
+            <li>{user.company.name} </li>
+        </ul>
+    ) )
+}
+<h2>post işlemmleri</h2>
+{
+    post.map(pos=>(
+        <ul key={pos.id} >
+            <li>{pos.name} </li>
+            
+        </ul>
+    ) )
+}
+    </div>
+  )
+}
+
+export default Axios
+```
