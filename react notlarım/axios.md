@@ -39,3 +39,37 @@
 
 
 // export default Card
+
+```
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
+function Axios() {
+    const [users, setUsers] = useState([])
+const [loading, setLoading] = useState(true)
+    useEffect(() => {
+      axios('https://jsonplaceholder.typicode.com/users')
+      .then(res=>setUsers(res.data))
+      .finally(()=>setLoading(false))
+    }, [])
+    
+  return (
+    <div>
+<h1>axios ile veri çekme </h1>
+
+{loading && <div>yükleniyor...</div> }
+{
+    users.map(user=>(
+        <ul key={user.id} >
+            <li>{user.name} </li>
+            <li>{user.address.street} </li>
+            <li>{user.company.name} </li>
+        </ul>
+    ) )
+}
+
+    </div>
+  )
+}
+
+export default Axios
+```
